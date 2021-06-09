@@ -1,0 +1,35 @@
+// { Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+//User function Template for C++
+
+void divisor(int n){
+    int i=1; 
+    //Write your code here
+    while(i<=n)
+    {
+        if(n%i==0)
+        {
+            cout<<i<<" ";
+        }
+        i++;
+    }
+}
+
+// { Driver Code Starts.
+    
+int main() {
+	
+	int t; cin>>t;
+	
+	while(t--){
+	    int n; cin>>n;
+        divisor(n);
+        cout<<endl;
+	}
+}  // } Driver Code Ends
