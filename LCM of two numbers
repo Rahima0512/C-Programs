@@ -1,0 +1,14 @@
+int LCM(int a, int b){
+
+    int start=max(a,b);
+    int end=a*b,i;
+    for(i=start;i<=end;i++)
+    {
+        if(i%a==0&&i%b==0)
+        {
+            return i;
+        }
+    }
+    
+    
+}
