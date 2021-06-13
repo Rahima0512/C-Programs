@@ -1,0 +1,20 @@
+int sum(int n)
+{
+    int sum1=0,num=0;
+    while(n>0)
+    {
+        num=n%10;
+        sum1=num+sum1;
+        n=n/10;
+        
+    }
+    return sum1;
+}
+int digitalRoot(int n)
+{int dig=n;
+    while(dig>=10)
+    {
+        dig=sum(dig);
+    }
+    return dig;
+}
