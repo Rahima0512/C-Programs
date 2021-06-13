@@ -1,0 +1,13 @@
+void utility(int number){
+    switch(number)
+    {
+        case 1:
+            cout << "One\n";
+            break;
+        
+        default:
+            cout << "Not One\n";
+            break;
+    }
+
+}
