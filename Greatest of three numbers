@@ -1,0 +1,17 @@
+int greatestOfThree(int A, int B, int C) {
+        int temp=0;
+        if(A>=B&&A>=C)
+        {
+            temp=A;
+        }
+        else if(B>=A&&B>=C)
+        {
+            temp=B;
+        }
+        else if (C>=A&&C>=B)
+        {
+            temp=C;
+        }
+        
+        return temp;
+    }
