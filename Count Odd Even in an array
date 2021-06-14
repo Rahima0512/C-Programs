@@ -1,0 +1,12 @@
+void countOddEven(int arr[], int sizeof_array)
+    {
+        int countOdd=0,countEven=0;
+        while(sizeof_array)
+        {
+            (arr[--sizeof_array]%2)?countOdd++:countEven++;
+            
+        }
+        cout<<countOdd<<" "<<countEven<<endl;
+       
+        
+    }
