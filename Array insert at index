@@ -1,0 +1,55 @@
+void insertAtIndex(int arr[], int sizeOfArray, int index, int element)
+    {
+        for(int i=0;i<sizeOfArray;i++)
+        {
+            if(index==sizeOfArray-1)
+            {
+                arr[index]=element;
+                break;
+            }
+            if(i==index)
+            {
+                int temp=0,next=0;
+                temp=arr[i];
+                arr[i]=element;
+                i++;
+                next=arr[i];
+                while(i<sizeOfArray)
+                {
+                    arr[i]=temp;
+                    if(i<sizeOfArray)
+                    {
+                        i++;
+                        temp=next;
+                        next=arr[i];
+                    }
+                    
+                    
+                    
+                }
+                break;
+            }
+        }
+        
+        
+    }
+    
+    execution time=0.23
+    
+    void insertAtIndex(int arr[], int sizeOfArray, int index, int element)
+    {
+        if(index==(sizeOfArray-1))
+            arr[sizeOfArray-1]=element;
+
+        else
+        {
+            for(int i=sizeOfArray-1;i>index;i--)
+            arr[i]=arr[i-1];
+            arr[index]=element;
+            
+        }
+            
+        
+        
+    }
+    execution time=0.19
