@@ -1,0 +1,32 @@
+int findMax(Height arr[], int n)
+{
+    int sum[n];
+    for(int i=0;i<n;i++)
+    {
+        sum[i]=(arr[i].feet*12)+arr[i].inches;
+    }
+    int temp=sum[0];
+    for(int i=1;i<n;i++)
+    {
+        if(sum[i]>temp)
+        {
+            temp=sum[i];
+        }
+        
+    }
+    return temp;
+    
+}
+
+********************************************************or********************************************************
+int findMax(Height arr[], int n)
+{
+    int res = INT_MIN;
+    
+    for(int i = 0; i < n; i++)
+    {
+        res = max(res, arr[i].feet*12 + arr[i].inches);
+    }
+    
+    return res;
+}
