@@ -1,0 +1,31 @@
+int maximumElement(int arr[],int n)
+{
+    int max1=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        
+        if(max1<arr[i])
+        {
+            max1=arr[i];
+        }
+        
+        
+    }
+    return max1;
+}
+
+int minimumElement(int arr[],int n)
+{
+    int min1=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        
+        if(min1>arr[i])
+        {
+            min1=arr[i];
+        }
+        
+        
+    }
+    return min1;
+}
