@@ -1,0 +1,24 @@
+int reverse(int N)
+    {
+        int temp = N;
+        int revNum = 0;
+        
+        while(N!=0)
+        {
+            temp=N%10;
+            revNum=revNum*10+temp;
+            N=N/10;
+        }
+        
+        return revNum;
+    }
+    bool isPalin(int N)
+    {
+       int rev = reverse(N);
+       if(N<10||rev == N)
+       {
+           return 1;
+       }else{
+           return 0;
+       }
+    }
