@@ -1,0 +1,31 @@
+long long int floorSqrt(long long int x) 
+    {
+        long high=x,res=0,low=1;
+        if(x==1)
+        {
+            return x;
+        }
+        
+        while(low<=high)
+        {
+            long mid=low+(high-low)/2;
+            if(mid*mid==x)
+            {
+                res=mid;
+                break;
+            }
+            if(mid*mid<x)
+            {
+                low=mid+1;
+                res=mid;
+            }
+            else
+            {
+                high=mid-1;
+                
+            }
+            
+        }
+        return res;
+        
+    }
