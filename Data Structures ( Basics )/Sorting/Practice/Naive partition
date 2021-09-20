@@ -1,17 +1,46 @@
 void partition(int arr[], int l, int h, int p)
 {
-    int temp[h-l+1],index=0;
+    int i,b[h-l+1],j=0;
+    int temp=p;
+    p=arr[p];
+    for(i=l;i<=h;i++)
+    {
+        
+        if(arr[i]<=p && i!=temp)
+        {
+            b[j]=arr[i];
+            j++;
+        }
+        
+    }
+    b[j]=p;
+    j++;
+    
+    for(i=l;i<=h;i++)
+    {
+        if(arr[i]>p)
+        {
+            b[j]=arr[i];
+            j++;
+        }
+        
+    }
     for(int i=l;i<=h;i++)
-        if(arr[i]<=arr[p] && i != p)
-            {
-                temp[index]=arr[i];index++;
-            }
-    temp[index++] = arr[p];
-    for(int i=l;i<=h;i++)
-        if(arr[i]>arr[p])
-            {
-                temp[index]=arr[i];index++;
-            }
-    for(int i=l;i<=h;i++)
-        arr[i]=temp[i-l];
+    {
+        arr[i]=b[i];
+    }
+    
+    
+}
+ 
+int main() {
+	
+    int arr[]={5,13,6,9,12,11,8};
+	
+	int n=sizeof(arr)/sizeof(arr[0]);
+	
+	partition(arr,0,n-1,3);
+	
+	for(int x: arr)
+	    cout<<x<<" ";
 }
