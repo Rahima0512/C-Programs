@@ -1,0 +1,48 @@
+#include<iostream>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    node *next;
+    node(int x)
+    {
+        data=x;
+        next=nullptr;
+        
+    }
+};
+
+struct node *insert_at_begin(node *head,int x)
+{
+    node *ptr;
+    ptr=new node(x);
+    ptr->next=head;
+    head=ptr;
+    return ptr;
+    
+}
+
+int print_Linked_list(node *head)
+{
+    node *current=head;
+    while(current!=nullptr)
+    {
+        cout<<current->data<<"\t";
+        current=current->next;
+    }
+    return 0;
+}
+
+int main()
+{
+    node *head= nullptr;
+    head=insert_at_begin(head,10);
+    head=insert_at_begin(head,20);
+    head=insert_at_begin(head,30);
+    head=insert_at_begin(head,40);
+    print_Linked_list(head);
+    return 0;
+    
+}
