@@ -28,7 +28,7 @@ void print_linked_list(node *head)
 }
 node *reverse_linked_list(node *head)
 {
-    if(head->next==nullptr)
+    if(head==nullptr||head->next==nullptr)
     {
         return head;
     }
