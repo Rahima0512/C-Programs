@@ -1,0 +1,17 @@
+bool searchLinkedList(Node *head, int x)
+{
+    bool present=false;
+    Node *curr=head;
+    while(curr!=nullptr)
+    {
+        if(curr->data==x)
+        {
+            present=true;
+            return present;
+        }
+        curr=curr->next;
+        
+    }
+    return present;
+    
+}
