@@ -1,0 +1,30 @@
+Node *insertAtBegining(Node *head, int x) 
+    {
+        Node *ptr= new Node(x);
+       if(head==nullptr)
+       {
+           return ptr;
+           
+       }
+       ptr->next=head->next;
+       head->next=ptr;
+       ptr->data=head->data;
+       head->data=x;
+       return head;
+       
+    }
+    
+    
+    //Function to insert a node at the end of the linked list.
+    Node *insertAtEnd(Node *head, int x)  {
+       Node *ptr= new Node(x);
+       if(head==nullptr)
+       {
+           return ptr;
+           
+       }
+       Node *curr=head;
+       while(curr->next!=nullptr) curr=curr->next;
+       curr->next=ptr;
+       return head;
+    }
