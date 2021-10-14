@@ -1,0 +1,38 @@
+void insertAtPosition(Node *head, int pos, int data)
+{
+    if(head==nullptr&& pos==1)
+    {
+        head->data=data;
+        return;
+    }
+    if(pos==1)
+    {
+        Node *ptr=new Node(data);
+        ptr->next=head->next;
+        head->next=ptr;
+        return;
+        
+        
+    }
+    int k=1;
+    
+    Node *temp=head;
+    while(k<=pos&&temp!=nullptr)
+    {
+        if(k==pos)
+        {
+            Node *ptr=new Node(data);
+            ptr->next=temp->next;
+            temp->next=ptr;
+            break;
+        }
+        temp=temp->next;
+        k++;
+        if(temp==nullptr)
+        {
+            return;
+        }
+        
+    }
+    
+}
