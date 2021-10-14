@@ -1,0 +1,58 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct node
+{
+    int data;
+    node * next,*prev;
+    node (int x)
+    {
+        data=x;
+        next=NULL;
+        prev=nullptr;
+    }
+        
+};
+void print(node *head)
+{
+    node *temp=head;
+    while(temp!=nullptr)
+    {
+        cout<<temp->data<<"\t";
+        temp=temp->next;
+    }
+}
+node *new_node_insert(node *head,int x)
+{
+    node *ptr=new node(x);
+    ptr->next=head;
+    if(head!=nullptr)
+    {
+        head->prev=ptr;
+        return ptr;
+    }
+    
+    
+    return ptr;
+}
+int main()
+{
+    node *head,*temp1,*temp2;
+    head=new node(10);
+    temp1=new node(20);
+    temp2=new node(30);
+    head->next=temp1;
+    temp1->next=temp2;
+    temp1->prev=head;
+    temp2->prev= temp1;
+    print(head);
+    cout<<"\nAfter insertion at the head\n";
+    head=new_node_insert(head,5);
+    print(head);
+    
+    
+    
+    
+}
+
