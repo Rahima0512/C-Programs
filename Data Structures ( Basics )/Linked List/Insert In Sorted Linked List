@@ -1,0 +1,23 @@
+Node * insertInSorted(Node * head, int data)
+{
+    Node *ptr=new Node(data);
+    if(head==nullptr)
+    {
+        return ptr;
+    }
+    if(head->data>data)
+    {
+        ptr->next=head;
+        return ptr;
+        
+        
+    }
+    Node *temp=head;
+    while(temp->next!=nullptr&&temp->next->data<data)
+    {
+        temp=temp->next;
+    }
+    ptr->next=temp->next;
+    temp->next=ptr;
+    return head;
+}
