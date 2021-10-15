@@ -1,0 +1,12 @@
+Node * deleteHead(Node *head)
+{
+    Node *new_head=head->next;
+    if(head==nullptr)
+    {
+        return nullptr;
+    }
+    head->next=nullptr;
+    delete head;
+    return new_head;
+    
+}
