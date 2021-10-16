@@ -1,0 +1,63 @@
+bool asc(Node *head)
+{
+    Node *temp=head;
+    while(temp->next->next!=nullptr)
+    {
+        if((temp->next->data)>=(temp->data))
+        {
+            
+            temp=temp->next;
+        }
+        else 
+        {
+            return false;
+        }
+        
+    }
+    return true;
+    
+}
+bool des(Node *head)
+{
+    Node *temp=head;
+    while(temp->next!=nullptr)
+    {
+        if((temp->next->data)<=(temp->data))
+        {
+            
+            temp=temp->next;
+            
+        }
+        else 
+        {
+            return false;
+        }
+        
+    }
+    return true;
+    
+}
+bool isSorted(Node * head)
+{
+    Node *temp=head;
+    if(head==nullptr||head->next==nullptr)
+    {
+        return true;
+    }
+    while(true)
+    {
+        if(temp->data<temp->next->data)
+        {
+            return asc(head);
+            
+        }
+        else if(temp->data>temp->next->data)
+        {
+            return des(head);
+        }
+        else
+        {
+            temp=temp->next;
+        }
+    }
+}
