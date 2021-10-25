@@ -1,0 +1,105 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct node
+{
+    node *next;
+    int data;
+    node(int x)
+    {
+        data=x;
+        next=nullptr;
+    }
+};
+
+struct MyStack
+{
+    node *head;
+    int sz;
+    MyStack()
+    {
+        head=nullptr;
+        sz=0;
+        
+    }
+    void push(int x)
+    {
+        if(head==nullptr)
+        {
+            head=new node(x);
+            sz++;
+            
+        }
+        else
+        {
+            node *temp=new node(x);
+            sz++;
+            temp->next=head;
+            head=temp;
+
+        }
+        
+    }
+    int pop()
+    {
+        if(head==nullptr)
+        {
+            return INT_MAX;
+        }
+        int res=head->data;
+        node *temp=head;
+        head=head->next;
+        delete temp;
+        sz--;
+        return res;
+    }
+    int sizeofstack()
+    {
+        return sz;
+    }
+    bool isEmpty()
+    {
+        if(head==nullptr)
+        {
+            return true;
+        }
+        else return false;
+    }
+    int peek()
+    {
+        if(head==nullptr)
+        {
+            return INT_MAX;
+        }
+        return head->data;
+    }
+    void traversal()
+    {
+        node *temp=head;
+        cout<<"Below is the list"<<endl;
+        while(temp!=nullptr)
+        {
+            cout<<temp->data<<"\t";
+            temp=temp->next;
+        }
+        return;
+    }
+};
+
+int main()
+{
+    MyStack s;
+    
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+    s.push(50);
+    s.traversal();
+    cout<<endl;
+    cout<<s.peek()<<"\n";
+    cout<<"size = "<<s.sizeofstack()<<"\n";
+    cout<<s.isEmpty()<<"\n";
+    cout<<s.pop()<<"\n";
+    return 0;
+    
+}
