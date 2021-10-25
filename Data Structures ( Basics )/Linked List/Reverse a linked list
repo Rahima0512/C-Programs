@@ -1,0 +1,19 @@
+//Function to reverse a linked list.
+    struct Node* reverseList(struct Node *head)
+    {
+        Node *curr=head;
+        Node *temp;
+        Node *prev =nullptr;
+        if(head==nullptr||head->next==nullptr)
+        {
+            return head;
+        }
+        while(curr!=nullptr)
+        {
+            temp=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=temp;
+        }
+        return prev;
+    }
