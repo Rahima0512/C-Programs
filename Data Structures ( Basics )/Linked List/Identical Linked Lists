@@ -1,0 +1,17 @@
+bool areIdentical(struct Node *head1, struct Node *head2)
+{
+    Node *curr1=head1, *curr2=head2;
+	while(curr1!=nullptr&&curr2!=nullptr)
+	{
+	    if(curr1->data==curr2->data)
+	    {
+	        curr1=curr1->next;
+	        curr2=curr2->next;
+	    }
+	    else
+	    {
+	        return false;
+	    }
+	}
+	return true;
+}
