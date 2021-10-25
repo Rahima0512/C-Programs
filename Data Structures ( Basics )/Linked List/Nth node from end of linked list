@@ -1,0 +1,22 @@
+//Function to find the data of nth node from the end of a linked list.
+int getNthFromLast(Node *head, int n)
+{
+    Node *curr;
+    int count =1;
+    for(curr=head; curr->next!=nullptr;curr=curr->next)
+    {
+        count++;
+    }
+    count=count-n;
+    if(count<0)
+    {
+        return -1;
+    }
+    curr=head;
+    for(int i=1;i<=count;i++)
+    {
+        curr=curr->next;
+    }
+    return curr->data;
+    
+}
