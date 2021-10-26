@@ -1,0 +1,22 @@
+bool isCircular(Node *head)
+{
+   if(head==nullptr)
+    {
+        return false;
+    }
+    else
+    {
+        Node *curr=head;
+        curr=curr->next;
+        while(curr!=nullptr)
+        {
+            if(curr==head)
+            {
+                return true;
+            }
+            curr=curr->next;
+        }
+        return false;
+        
+    }
+}
