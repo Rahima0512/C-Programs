@@ -1,0 +1,20 @@
+int getLength(Node * head)
+{
+    int size=0;
+    if(head==nullptr)
+    {
+        return size;
+    }
+    else
+    {
+        Node *curr=head;
+        size++;
+        curr=curr->next;
+        while(curr!=head)
+        {
+            size++;
+            curr=curr->next;
+        }
+        return size;
+    }
+}
