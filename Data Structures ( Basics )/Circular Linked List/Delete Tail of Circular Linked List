@@ -1,0 +1,19 @@
+Node * deleteTail(Node * head)
+{
+    Node *curr=head;
+    if(head==nullptr)
+    {
+        return nullptr;
+    }
+    
+    while(curr->next->next!=head)
+    {
+        curr=curr->next;
+        
+    }
+    Node *temp=curr->next;
+    curr->next=head;
+    delete temp;
+    return head;
+    
+}
