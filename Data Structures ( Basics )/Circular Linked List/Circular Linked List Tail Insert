@@ -1,0 +1,15 @@
+Node *insertInTail(Node * head, int data)
+{
+    Node *ptr= new Node(data);
+    if(head==nullptr)
+    {
+        return ptr;
+        
+    }
+    
+    ptr->next=head->next;
+    head->next=ptr;
+    ptr->data=head->data;
+    head->data=data;
+    return ptr;
+}
