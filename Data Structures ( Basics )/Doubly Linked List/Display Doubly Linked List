@@ -1,0 +1,19 @@
+vector<int> displayList(Node *head)
+{
+    vector<int>v1;
+    Node *pre=head;
+    if(head!=nullptr)
+    {
+        while(pre!=nullptr)
+        {
+            v1.push_back(pre->data);
+            pre=pre->next;
+            
+        }
+        
+    }
+    //v1.push_back(head->data);
+    return v1;
+    
+    
+}
