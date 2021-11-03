@@ -1,0 +1,120 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct My_Queue
+{
+    int front,rear;
+    int *arr;
+    int cap;
+    My_Queue(int n)
+    {
+        cap=n;
+        front=-1;
+        rear=-1;
+        arr=new int [cap];
+    }
+    void enqueue(int x)
+    {
+        if(front==0&&rear==cap-1||(rear==(front-1)%cap-1))
+        {
+            cout<<"\nQueue is full"<<endl;
+        }
+        else if(front==-1)
+        {
+            front=0;
+            rear=0;
+            arr[front]=x;
+        }
+        else if(front!=0&&rear==cap-1)
+        {
+            rear=0;
+            arr[rear]=x;
+            
+        }
+        else
+        {
+            rear++;
+            arr[rear]=x;
+        }
+        
+    }
+    
+    int dequeue()
+    {
+        int res=0;
+        res=arr[front];
+        if(rear==front==-1)
+        {
+            cout<<"\nQueue is empty";
+            return res;
+        }
+        
+        if(front==rear)
+        {
+            
+            front=rear=-1;
+            return res;
+            
+        }
+        else if(front==cap-1)
+        {
+            res=arr[front];
+            front=0;
+            return res;
+            
+        }
+        else 
+        {
+            front++;
+            return res;
+        }
+    }
+    void display()
+    {
+        if(rear==front==-1)
+        {
+            cout<<"\nQueue is empty";
+        }
+        else if(rear>=front)
+        {
+            for(int i=0;i<=rear;i++)
+            {
+                cout<<arr[i]<<"\t";
+            }
+        }
+        else
+        {
+            for(int i=front;i<cap;i++)
+            {
+                cout<<arr[i]<<"\t";
+                
+            }
+            for(int i=0;i<=rear;i++)
+            {
+                cout<<arr[i]<<"\t";
+                
+            }
+            
+        }
+    }
+};
+
+int main()
+{
+    My_Queue q(3);
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    
+    q.display();
+    cout<<endl;
+    cout<<q.dequeue()<<endl;
+    
+    q.enqueue(10);
+    
+    q.display();
+    
+    
+    
+    return 0;
+}
