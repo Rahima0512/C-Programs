@@ -1,0 +1,143 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct MyDeque
+{
+    int rear,front,size,n,cap;
+    int *arr;
+    MyDeque(int x)
+    {
+        n=cap=x;
+        arr = new int [n];
+        front=-1;
+        rear=-1;
+        
+        
+    }
+    void InsertFront(int x)
+    {
+        if(front==-1&&rear==-1)
+        {
+            front=rear=0;
+            arr[0]=x;
+        }
+        else if(rear>0&&front>=1)
+        {
+            front--;
+            arr[front]=x;
+        }
+        else if(rear<front)
+        {
+            if(front-1==rear)
+            {
+                return;
+            }
+            else
+            {
+                front--;
+                arr[front]=x;
+                
+            }
+        }
+        else
+        {
+            return;
+        }
+        
+    }
+    int deleteFront()
+    {
+        int res=arr[front];
+        arr[front]=0;
+        front++;
+        return res;
+        
+    }
+    void InsertRear(int x)
+    {
+        if(front==-1&&rear==-1)
+        {
+            front=rear=0;
+            arr[rear]=x;
+        }
+        else if(rear<n)
+        {
+            rear++;
+            arr[rear]=x;
+        }
+        else if(rear+1==n&&front>=1)
+        {
+            rear=(rear+1)%2;
+            arr[rear]=x;
+        }
+        else
+        {
+            return;
+        }
+        
+    }
+    int deleteRear()
+    {
+        int res=arr[rear];
+        arr[rear]=0;
+        return res;
+        
+    }
+    int size_of_Dq()
+    {
+        
+    }
+    bool isEmpty()
+    {
+        
+    }
+    bool isFull()
+    {
+        
+    }
+    
+    void display()
+    {
+        if(rear==front==-1)
+        {
+            cout<<"\nQueue is empty";
+        }
+        else if(rear>=front)
+        {
+            for(int i=0;i<=rear;i++)
+            {
+                cout<<arr[i]<<"\t";
+            }
+        }
+        else
+        {
+            for(int i=front;i<cap;i++)
+            {
+                cout<<arr[i]<<"\t";
+                
+            }
+            for(int i=0;i<=rear;i++)
+            {
+                cout<<arr[i]<<"\t";
+                
+            }
+            
+        }
+    }
+    
+};
+int main()
+{
+    MyDeque dq(4);
+    dq.InsertFront(1);
+    dq.InsertRear(2);
+    dq.InsertRear(3);
+    dq.InsertRear(4);
+    dq.display();
+    cout<<endl;
+    dq.deleteFront();
+    dq.deleteFront();
+    dq.InsertFront(1);
+    
+    
+    
+}
