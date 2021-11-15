@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node  
+{
+    Node *left,*right;
+    int key;
+    Node(int x)
+    {
+        key=x;
+        left=nullptr;
+        right=nullptr;
+    }
+};
+
+void inorder(Node *root)
+{
+    stack <Node*> s;
+    Node *curr=root;
+    while(curr!=nullptr || s.empty()==false)
+    {
+        while(curr!=nullptr)
+        {
+            s.push(curr);
+            curr=curr->left;
+        }
+        curr=s.top();
+        s.pop();
+        cout<<curr->key<<"\t";
+        curr=curr->right;
+    }
+        
+}  
+
+int main() {
+    Node *root;
+    root= new Node(10);
+    root->left= new Node(20);
+    root->right= new Node(30);
+    root->right->left= new Node(40);
+    root->right->right= new Node(50);
+	
+	inorder(root);
+}
