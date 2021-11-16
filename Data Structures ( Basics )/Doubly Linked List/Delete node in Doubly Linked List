@@ -1,0 +1,32 @@
+Node* deleteNode(Node *head, int x)
+    {
+        if(head==nullptr) return nullptr;
+        if(head->next==nullptr)
+        {
+            delete head;
+            return nullptr;
+        }
+        Node *curr=head;
+        if(x==1)
+        {
+            curr=head;
+            curr->next->prev=nullptr;
+            head=head->next;
+            delete curr;
+            return head;
+        }
+         
+        while(x!=1)
+        {
+        curr=curr->next;
+        x--;
+        }
+         
+        curr->prev->next=curr->next;
+        if(curr->next != nullptr)
+        curr->next->prev=curr->prev;
+         
+        delete curr;
+        return head;
+        
+    }
