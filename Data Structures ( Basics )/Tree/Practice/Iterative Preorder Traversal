@@ -13,7 +13,7 @@ struct Node
     }
 };
 
-void inorder(Node *root)
+void preorder(Node *root)
 {
     if(root==nullptr)
     {
@@ -51,5 +51,5 @@ int main() {
     root->left->right = new Node(5);
     root->right->left = new Node(2);
 	
-	inorder(root);
+	preorder(root);
 }
