@@ -38,6 +38,7 @@ bool search(Node *root, int x)
 
 Node *insert(Node *root,int x)
 {
+    static Node *curr=root;
     Node *ptr=new Node(x);
     if(root==nullptr)
     {
@@ -51,7 +52,7 @@ Node *insert(Node *root,int x)
         if(root->left==nullptr)
         {
             root->left=ptr;
-            return root;
+            return curr;
         }
         insert(root->left,x);
     }
@@ -60,7 +61,7 @@ Node *insert(Node *root,int x)
         if(root->right==nullptr)
         {
             root->right=ptr;
-            return root;
+            return curr;
         }
         insert(root->right,x);
     }
@@ -89,13 +90,13 @@ int main() {
 	root->right->right=new Node(80);
 	int x=17;
 	
-	if(search(root,16))
+	if(search(root,17))
 	{
 	    print(root);
 	}
 	else
 	{
-	    insert(root,16);
+	    root=insert(root,17);
 	    print(root);
 	}
 }
