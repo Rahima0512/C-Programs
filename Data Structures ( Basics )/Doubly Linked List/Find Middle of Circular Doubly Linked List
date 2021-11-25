@@ -1,0 +1,15 @@
+int findMiddle(Node * head)
+    {
+        int mid=head->data;
+        Node*slow=head,*fast=head;
+        
+        while(fast->next!=head)
+        {
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        mid=slow->data;
+        return mid;
+       
+       
+    }
