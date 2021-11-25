@@ -1,0 +1,48 @@
+Node* sortedInsert(Node *head, int x)
+{
+    
+    Node *temp= new Node();
+    temp->data=x;
+    Node *curr=head;
+    
+    if(head==nullptr)
+    {
+        head->data=x;
+        return head;
+    }
+    else if(x<=head->data)
+    {
+        temp->next=head;
+        head->prev=temp;
+        return temp;
+    }
+    else
+    {
+        while(curr->next!=nullptr)
+        {
+            if(x<=curr->data)
+            {
+                break;
+            }
+            curr=curr->next;
+        }
+        
+        if(curr->next==nullptr)
+        {
+            if(curr->data<x)
+            {
+                curr->next=temp;
+                temp->prev=curr;
+                return head;
+            }
+        }
+        
+        curr=curr->prev;
+        temp->next=curr->next;
+        curr->next->prev=temp;
+        temp->prev=curr;
+        curr->next=temp;
+    }
+    
+    return head;
+}
