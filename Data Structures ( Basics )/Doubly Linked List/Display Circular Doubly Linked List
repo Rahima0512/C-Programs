@@ -1,0 +1,23 @@
+vector <int> v;
+    
+    if(head==nullptr)
+    {
+        return v;
+    }
+    if(head->next==head)
+    {
+        v.push_back(head->data);
+        return v;
+    }
+    
+    Node *curr=head->next;
+    v.push_back(head->data);
+    
+    while(curr!=head)
+    {
+        v.push_back(curr->data);
+        curr=curr->next;
+    
+    }
+    
+    return v;
