@@ -1,0 +1,15 @@
+bool isCircular(Node * head)
+    {
+       if(head==nullptr)
+       {
+           return true;
+       }
+       else if(head->prev==nullptr)
+       {
+           return false;
+       }
+       else
+       {
+           return true;
+       }
+    }
