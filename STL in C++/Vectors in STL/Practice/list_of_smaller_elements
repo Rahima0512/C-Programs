@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#include<vector>
+
+using namespace std;
+
+void list_of_smaller_elements(vector<int>&v1,int n,int k)
+{
+    vector <int> v;
+    
+    for(int x:v1)
+    {
+        if(x>=k)
+        {
+            continue;
+        }
+        else
+        {
+            v.push_back(x);
+        }
+        
+    }
+    v1=v;
+    return;
+    
+}
+
+
+int main()
+{
+    int arr[5]={11,32,5,3,64};
+    int n=4;
+    vector<int> v1(arr,arr+n);
+    list_of_smaller_elements(v1,n,12);
+    
+    for(int &x :v1)
+    {
+        cout<<x<<" ";
+    }
+    
+    return 0;
+}
