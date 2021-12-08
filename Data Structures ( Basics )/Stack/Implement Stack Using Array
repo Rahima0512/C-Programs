@@ -1,0 +1,45 @@
+void push(int data)
+{
+    int n=sizeof(stack)/sizeof(stack[0]);
+    if(n==100000-1)
+    {
+        cout<<"\nStack Full"<<endl;
+        return;
+        
+    }
+    stack[++top]=data;
+    
+}
+//Function to pop the topmost data
+void pop()
+{
+    if(top>=0)
+    {
+        top--;
+        
+        
+    }
+    else
+    {
+        cout<<"\nStack Empty"<<endl;
+        
+    }
+    
+}
+//Function to display the stack from index 0 
+void display()
+{
+    if(top<0)
+    {
+        cout<<endl<<"-1"<<endl;
+        
+    }
+    else
+    {
+        for(int i=0;i<=top;i++)
+        {
+            cout<<stack[i]<<" ";
+        }
+    }
+    
+}
