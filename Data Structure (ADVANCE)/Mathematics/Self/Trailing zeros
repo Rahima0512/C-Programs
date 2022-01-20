@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int trailing_zeroes(int num)
+{
+    int ans=0;
+    while(num>0)
+    {
+        ans=ans+num/5;
+        num=num/5;
+    }
+    return ans;
+    
+}
+int main()
+{
+    int n;
+    cout<<"\nEnter the number\t";
+    cin>>n;
+    cout<<"Trailing zeroes in the number are "<<trailing_zeroes(n);
+    return 0; 
+    
+}
