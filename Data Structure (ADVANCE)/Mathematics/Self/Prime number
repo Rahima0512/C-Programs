@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+void Is_Prime(int a)
+{
+    if(a==2||a==3)
+    {
+        cout<<"\nIt's a PRIME number"<<endl;
+    }
+    else
+    {
+        int i=1,num;
+        while(6*i<a)
+        {
+            if(a==6*i+1||a==6*i-1)
+            {
+                cout<<"\nIt's a PRIME number"<<endl;
+                return;
+            }
+            i++;
+        }
+        cout<<"\nIt's NOT a PRIME number"<<endl;
+        return;
+        
+    }
+}
+
+int main()
+{
+    int a,b,ans;
+    cout<<"Enter the number"<<endl;
+    cin>>a;
+    Is_Prime(a);
+    
+
+    return 0;
+}
