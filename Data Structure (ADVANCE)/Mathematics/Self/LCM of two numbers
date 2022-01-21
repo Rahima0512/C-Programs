@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int GCD_calculator(int a, int b)
+{
+    if(b==0)
+    {
+        return a;
+    }
+    else
+    {
+        return GCD_calculator(b,a%b);
+    }
+    
+}
+
+int LCM_Calculator(int a, int b)
+{
+    int ans=(a*b)/GCD_calculator(a,b);
+    return ans;
+    
+}
+
+
+int main()
+{
+    int a,b,ans;
+    cout<<"Enter the numbers"<<endl;
+    cin>>a>>b;
+    
+    ans=LCM_Calculator(a,b);
+    
+    cout<<"\n LCM of the number is\t"<<ans<<endl;
+    
+    
+
+    return 0;
+}
