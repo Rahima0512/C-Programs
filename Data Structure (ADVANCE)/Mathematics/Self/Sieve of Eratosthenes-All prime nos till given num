@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void sieve(int num)
+{
+    bool isprime[num+1];
+    memset(isprime,true,sizeof(isprime));
+    int i;
+    for(i=2;i<=num;i++)
+    {
+        if(isprime[i]==true)
+        {
+            for(int j=i*i;j<=num;j=j+i)
+            {
+                isprime[j]=false;
+            }
+        }
+    }
+    
+    for(i=2;i<=num;i++)
+    {
+        if(isprime[i])
+        {
+            cout<<i<<"\t";
+        }
+    }
+    
+    
+}
+
+
+
+int main()
+{
+    int num;
+    cout<<"Enter a number\t";
+    cin>>num;
+    cout<<endl;
+    sieve(num);
+    return 1;
+    
+}
