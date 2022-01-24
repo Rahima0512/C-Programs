@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+void all_prime_nos(int num)
+{
+    int x=2,count=0;
+    while(x<=num&&x>1)
+    {
+
+        if(x==2||x==3)
+        {
+            cout<<x<<"\t";
+            x++;
+            continue;
+            
+        }
+        
+        count=0;
+        for(int i=2;i*i<=x;i++)
+        {
+            if(x%i==0)
+            {
+                count++;
+                break;
+                
+            }
+        }
+        if(count==0)
+        {
+            cout<<x++<<"\t";
+        
+        }
+        else
+        {
+            x++;
+        }
+        
+    
+    }
+    
+}
+
+
+
+int main()
+{
+    int num;
+    cout<<"Enter a number\t";
+    cin>>num;
+    cout<<endl;
+    all_prime_nos(num);
+    return 1;
+    
+}
