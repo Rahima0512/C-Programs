@@ -1,0 +1,32 @@
+
+#include <iostream>
+
+using namespace std;
+
+int power(int x, int n)
+{
+    int ans=1;
+    while(n>0)
+    {
+        if(x%2==0)
+        {
+            x=x*x;
+            n=n/2;
+        }
+        else
+        {
+            ans=ans*x;
+            n=n-1;
+        }
+        
+    }
+    return ans;
+}
+
+int main()
+{
+    cout<<"Power of number is "<<power(3,2);
+    
+
+    return 0;
+}
