@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+bool kth_bit_is_set(int num,int k)
+{
+    //USING RIGHT SHIFT
+    if((num>>k-1)&1!=0)
+    {
+        cout<<"Yes ";
+    }
+    else
+    {
+        cout<<"No ";
+    }
+    
+    if((num&(1<<k-1)!=0))// USING LEFT SHIFT
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+    
+}
+
+int main()
+{
+    int num=8,k=2;
+    
+    cout<<"kth_bit_is_set = "<<kth_bit_is_set(num,k);
+    return 0;
+}
