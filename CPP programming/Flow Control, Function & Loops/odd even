@@ -1,0 +1,30 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    cout<<"\nEnter a number of your choice\t";
+    cin>>a;
+    cout<<"\n";
+    
+    for(int i=1;i<=a;i++)
+    {
+        cout<<i<<"\t";
+        if(i%2==0)
+        {
+            even
+            cout<<"even"<<"\n";
+        }
+        else
+        {
+            cout<<"odd"<<"\n";
+        }
+        
+    }
+    
+
+    return 0;
+}
